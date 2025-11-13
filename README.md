@@ -17,102 +17,120 @@
 - Navega por el sistema de archivos
 - Visualiza carpetas y archivos
 - Sube niveles en la jerarquía de directorios
-- Refresca la vista actual
-- Doble clic para entrar en carpetas
+ 
+Este proyecto es una aplicación de escritorio que simula funciones básicas de un "mini" sistema operativo mediante una interfaz gráfica creada con `tkinter`.
 
-#### 2. **Gestión de Procesos**
-- Lista todos los procesos activos del sistema
-- Muestra PID, nombre y usuario de cada proceso
-- Finaliza procesos seleccionados
-- Contador de procesos activos
-- Advertencias de seguridad
+**Objetivo:** servir como práctica educativa para entender conceptos básicos de sistemas: explorador de archivos, gestión de procesos, shell limitada e información del sistema.
 
-#### 3. **Shell Educativa**
-- Terminal de comandos básicos
-- Comandos permitidos: `ls`, `dir`, `pwd`, `echo`, `clear`
-- Historial de comandos (navega con flechas ↑↓)
-- Interfaz estilo terminal con fondo oscuro
-- Mensajes de ayuda y error informativos
+---
 
-#### 4. **Información del Sistema**
-- Información del usuario actual
-- Detalles del sistema operativo
-- Información del procesador (núcleos, frecuencia, uso)
-- Uso de memoria RAM con barras de progreso visuales
-- Espacio en disco de todas las particiones
-- Información de interfaces de red
-- Tiempo de actividad del sistema
+**Metadatos del paquete**
 
-## 🚀 Requisitos
+- Versión: `2.0` (definida en `modulos/__init__.py`)
+- Autor: `jaider`
 
-### Dependencias de Python
+---
 
-```bash
-pip install pillow psutil
+## Resumen de funcionalidades
+
+- **Explorador de archivos** (`modulos/mod_explorador.py`)
+   - Navegación por carpetas
+   - Subir nivel y refrescar vista
+   - Manejo de directorios vacíos y errores de permisos
+
+- **Gestor de procesos** (`modulos/mod_procesos.py`)
+   - Lista procesos activos (PID y nombre)
+   - Finalizar procesos por PID (usa `psutil`)
+
+- **Shell educativa** (`modulos/mod_shell.py`)
+   - Ejecuta comandos permitidos: `ls`, `dir`, `pwd`, `echo`
+   - Muestra salida y errores formateados
+
+- **Información del sistema** (`modulos/mod_info.py`)
+   - Usuario actual, datos del SO y uso de disco (usa `psutil`)
+
+- **Estilos** (`modulos/estilo.py`)
+   - Utilitarios para gradientes y frames de contenido
+
+---
+
+## Requisitos
+
+- Python 3.8 o superior
+- Dependencias Python (instalar mediante `pip`):
+   - `psutil`
+
+`tkinter` viene normalmente incluido en instalaciones estándar de Python en Windows; en algunas distribuciones Linux puede requerir paquetes adicionales (p. ej. `python3-tk`).
+
+## Instalación y ejecución
+
+1. Clona el repositorio y entra en la carpeta:
+
+```powershell
+git clone https://github.com/Jaider77/OS-mini-.git
+cd "os_mini"
 ```
 
-- **Python**: 3.6 o superior
-- **tkinter**: Incluido en la mayoría de instalaciones de Python
-- **Pillow (PIL)**: Para manejo de imágenes
-- **psutil**: Para información de procesos y sistema
+2. (Opcional, recomendado) crea y activa un entorno virtual:
 
-## 📦 Estructura del Proyecto
-
-```
-mini_sistema_operativo/
-│
-├── main.py                      # Archivo principal de la aplicación
-├── README.md                    # Este archivo
-├── requirements.txt             # Dependencias del proyecto
-│
-├── modulos/                     # Paquete de módulos
-│   ├── __init__.py             # Inicializador del paquete
-│   ├── mod_explorador.py       # Módulo explorador de archivos
-│   ├── mod_procesos.py         # Módulo gestión de procesos
-│   ├── mod_shell.py            # Módulo shell educativa
-│   └── mod_info.py             # Módulo información del sistema
-│
-└── imagenes/                    # Recursos gráficos
-    ├── explorador.png          # Icono del explorador
-    ├── procesos.png            # Icono de procesos
-    ├── shell.png               # Icono de la shell
-    └── info.png                # Icono de información
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
 ```
 
-## 🎮 Uso
+3. Instala la dependencia necesaria:
 
-### Instalación
+```powershell
+pip install psutil
+```
 
-1. **Clona o descarga el proyecto**:
-   ```bash
-   git clone <url-del-repositorio>
-   cd mini_sistema_operativo
-   ```
+4. Ejecuta la aplicación:
 
-2. **Instala las dependencias**:
-   ```bash
-   pip install -r requirements.txt
-   ```
+```powershell
+python main.py
+```
 
-3. **Ejecuta la aplicación**:
-   ```bash
-   python main.py
-   ```
+La ventana principal mostrará botones para abrir cada módulo en ventanas separadas.
 
-### Navegación
+---
 
-1. **Pantalla Principal**: Selecciona el módulo que deseas usar haciendo clic en su botón
-2. **Dentro de cada módulo**: Usa los controles específicos de cada funcionalidad
-3. **Retroceder**: Haz clic en el botón "⬅️ Retroceder" para volver al menú principal
+## Notas de seguridad y limitaciones
 
-## 🛠️ Modificaciones y Personalización
+- **Finalizar procesos:** terminar procesos puede requerir privilegios elevados y puede interrumpir servicios importantes. Usa la funcionalidad con precaución.
+- **Shell educativa:** solo se permiten unos pocos comandos por diseño; la ejecución se realiza con `subprocess` y `shell=True` para simplicidad, así que evita introducir comandos no controlados.
+- **Acceso a archivos:** el explorador no implementa operaciones destructivas (borrar/copiar/mover) — solo navegación — por seguridad y simplicidad.
 
-### Cambiar las Imágenes de los Botones
+## Estructura del proyecto
 
-1. Reemplaza los archivos PNG en la carpeta `imagenes/`
-2. Mantén los mismos nombres de archivo
-3. Tamaño recomendado: 256x256 píxeles
-4. Formato: PNG con fondo transparente o blanco
+```
+`main.py`                 # Punto de entrada de la app
+`modulos/`                # Paquete con los módulos
+   ├─ `__init__.py`        # Metadatos (versión / autor)
+   ├─ `mod_explorador.py`  # Explorador de archivos
+   ├─ `mod_procesos.py`    # Gestor de procesos (usa psutil)
+   ├─ `mod_shell.py`       # Shell educativa
+   ├─ `mod_info.py`        # Información del sistema (usa psutil)
+   └─ `estilo.py`          # Utilidades de UI / gradientes
+```
+
+## Sugerencias y mejoras (opcionales)
+
+- Añadir `requirements.txt` con `psutil` para facilitar instalación.
+- Añadir confirmación antes de finalizar procesos y opción de forzar (`kill`) con cuidado.
+- Implementar operaciones seguras de archivo (abrir, copiar, borrar) con confirmaciones.
+- Añadir pruebas unitarias para funciones no-GUI y scripts de verificación de dependencias.
+
+## Contribuciones
+
+Abierto a PRs e issues. Describe cambios, pruebas realizadas y justificación.
+
+## Licencia
+
+Por defecto sugerida: MIT. Añade un archivo `LICENSE` si aún no existe.
+
+---
+
+Si quieres, puedo generar ya un `requirements.txt`, añadir confirmaciones antes de terminar procesos o crear un pequeño script de comprobación de dependencias. Dime qué prefieres y lo hago.
 
 ### Agregar Nuevos Comandos a la Shell
 
