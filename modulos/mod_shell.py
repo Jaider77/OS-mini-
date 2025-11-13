@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext, messagebox
 import subprocess
 import os
-from .ui_helpers import aplicar_gradiente_y_contenido
+from .estilo import aplicar_gradiente_y_contenido
 
 # =============================================================================
 # FUNCIÓN PRINCIPAL DEL MÓDULO

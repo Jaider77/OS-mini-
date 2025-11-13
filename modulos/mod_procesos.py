@@ -2,7 +2,7 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import psutil  # Biblioteca específica para gestión de procesos
-from .ui_helpers import aplicar_gradiente_y_contenido
+from .estilo import aplicar_gradiente_y_contenido
 
 # =============================================================================
 # FUNCIÓN PRINCIPAL DEL MÓDULO

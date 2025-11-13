@@ -5,7 +5,7 @@ import getpass
 import psutil
 import os
 from datetime import datetime
-from .ui_helpers import aplicar_gradiente_y_contenido
+from .estilo import aplicar_gradiente_y_contenido
 
 # =============================================================================
 # FUNCIÓN PRINCIPAL DEL MÓDULO
