@@ -111,14 +111,7 @@ La ventana principal mostrará botones para abrir cada módulo en ventanas separ
    ├─ `mod_shell.py`       # Shell educativa
    ├─ `mod_info.py`        # Información del sistema (usa psutil)
    └─ `estilo.py`          # Utilidades de UI / gradientes
-```
-
-## Sugerencias y mejoras (opcionales)
-
-- Añadir `requirements.txt` con `psutil` para facilitar instalación.
-- Añadir confirmación antes de finalizar procesos y opción de forzar (`kill`) con cuidado.
-- Implementar operaciones seguras de archivo (abrir, copiar, borrar) con confirmaciones.
-- Añadir pruebas unitarias para funciones no-GUI y scripts de verificación de dependencias.
+``
 
 ## Contribuciones
 
