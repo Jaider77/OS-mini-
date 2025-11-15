@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import ttk, scrolledtext
 import platform
 import getpass
-import psutil
+import psutil # pyright: ignore[reportMissingModuleSource]
 import os
 from datetime import datetime
 from .estilo import aplicar_gradiente_y_contenido

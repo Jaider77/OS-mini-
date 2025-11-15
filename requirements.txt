@@ -1,0 +1,12 @@
+# Dependencias del proyecto
+# Instalar con: pip install -r requirements.txt
+
+psutil>=5.9.0
+Pillow>=10.0.0
+
+# Notas:
+# - `tkinter` normalmente viene con Python en Windows; en Linux puede ser necesario
+#   instalar el paquete del sistema (p. ej. `python3-tk`).
+# - Pillow se utiliza para procesamiento de imágenes en la interfaz gráfica.
+# - Ajusta las versiones si necesitas compatibilidad específica.
+# - Recomendado: usar un entorno virtual (venv) antes de instalar.

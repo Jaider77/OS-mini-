@@ -1,6 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
-from PIL import Image, ImageTk, ImageDraw, ImageFilter
+from PIL import Image, ImageTk, ImageDraw, ImageFilter # pyright: ignore[reportMissingImports]
 import os
 
 # =============================================================================
@@ -16,7 +16,7 @@ from modulos.mod_info import abrir_info_sistema
 # CONFIGURACIÓN DE LA VENTANA PRINCIPAL
 # =============================================================================
 
-def crear_ventana_principal(color1="#44B3EB", color2="#000000", ancho=400, alto=550):
+def crear_ventana_principal(color1="#44B3EB", color2="#000000", ancho=550, alto=550):
     """
     Crea y configura la ventana principal de la aplicación.
     

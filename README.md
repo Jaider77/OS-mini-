@@ -58,11 +58,10 @@ Este proyecto es una aplicación de escritorio que simula funciones básicas de 
 
 - Python 3.8 o superior
 - Dependencias Python (instalar mediante `pip`):
-   - `psutil`
+  - `psutil` - Gestión de procesos del sistema
+  - `Pillow` (PIL) - Procesamiento de imágenes para la interfaz gráfica
 
-`tkinter` viene normalmente incluido en instalaciones estándar de Python en Windows; en algunas distribuciones Linux puede requerir paquetes adicionales (p. ej. `python3-tk`).
-
-## Instalación y ejecución
+`tkinter` viene normalmente incluido en instalaciones estándar de Python en Windows; en algunas distribuciones Linux puede requerir paquetes adicionales (p. ej. `python3-tk`).## Instalación y ejecución
 
 1. Clona el repositorio y entra en la carpeta:
 
@@ -104,6 +103,8 @@ La ventana principal mostrará botones para abrir cada módulo en ventanas separ
 
 ```
 `main.py`                 # Punto de entrada de la app
+imagenes
+
 `modulos/`                # Paquete con los módulos
    ├─ `__init__.py`        # Metadatos (versión / autor)
    ├─ `mod_explorador.py`  # Explorador de archivos

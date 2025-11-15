@@ -1,7 +1,7 @@
 # modulos/mod_procesos.py
 import tkinter as tk
 from tkinter import ttk, messagebox
-import psutil  # Biblioteca específica para gestión de procesos
+import psutil  # pyright: ignore[reportMissingModuleSource] # Biblioteca específica para gestión de procesos
 from .estilo import aplicar_gradiente_y_contenido
 
 # =============================================================================
