@@ -113,6 +113,7 @@ La ventana principal mostrará botones para abrir cada módulo en ventanas separ
    └─ `estilo.py`          # Utilidades de UI / gradientes
 ``
 
+
 ## Contribuciones
 
 Abierto a PRs e issues. Describe cambios, pruebas realizadas y justificación.

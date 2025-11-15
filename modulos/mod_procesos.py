@@ -182,7 +182,7 @@ def abrir_gestion_procesos(ventana_padre):
                 f"¿Estás seguro de que deseas finalizar el proceso?\n\n"
                 f"PID: {pid}\n"
                 f"Nombre: {nombre_proceso}\n\n"
-                f"⚠️ Esta acción no se puede deshacer.",
+                f" Esta acción no se puede deshacer.",
                 parent=procesos_win
             )
             
@@ -224,7 +224,7 @@ def abrir_gestion_procesos(ventana_padre):
             messagebox.showerror(
                 "Permiso Denegado",
                 f"No tienes permisos suficientes para finalizar el proceso {pid}.\n\n"
-                f"💡 Intenta ejecutar la aplicación como administrador.",
+                f" Intenta ejecutar la aplicación como administrador.",
                 parent=procesos_win
             )
             
@@ -314,7 +314,7 @@ def abrir_gestion_procesos(ventana_padre):
     # Botón para finalizar el proceso
     btn_finalizar = ttk.Button(
         entrada_frame,
-        text="❌ Finalizar Proceso",
+        text=" Finalizar Proceso",
         command=finalizar_proceso
     )
     btn_finalizar.pack(side=tk.LEFT, padx=5)
@@ -329,7 +329,7 @@ def abrir_gestion_procesos(ventana_padre):
     # Botón: Refrescar Lista
     btn_refrescar = ttk.Button(
         botones_frame,
-        text="🔄 Refrescar Lista",
+        text=" Refrescar Lista",
         command=listar_procesos
     )
     btn_refrescar.pack(side=tk.LEFT, padx=5)
@@ -345,7 +345,7 @@ def abrir_gestion_procesos(ventana_padre):
     # Botón: Retroceder (NUEVO)
     btn_retroceder = ttk.Button(
         botones_frame,
-        text="⬅️ Retroceder",
+        text=" Retroceder",
         command=cerrar_ventana
     )
     btn_retroceder.pack(side=tk.RIGHT, padx=5)
@@ -360,7 +360,7 @@ def abrir_gestion_procesos(ventana_padre):
     # Advertencia de seguridad
     advertencia = ttk.Label(
         frame,
-        text="⚠️ ADVERTENCIA: Finalizar procesos del sistema puede causar inestabilidad. Usa con precaución.",
+        text=" ADVERTENCIA: Finalizar procesos del sistema puede causar inestabilidad. Usa con precaución.",
         font=('Arial', 8),
         foreground='red',
         background='#fff3cd',

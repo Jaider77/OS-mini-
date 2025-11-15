@@ -110,7 +110,7 @@ def abrir_shell(ventana_padre):
     # Botón para ejecutar el comando
     btn_ejecutar = ttk.Button(
         entrada_interna,
-        text="▶️ Ejecutar",
+        text=" Ejecutar",
         command=lambda: ejecutar_comando()
     )
     btn_ejecutar.pack(side=tk.RIGHT, padx=5)
@@ -124,7 +124,7 @@ def abrir_shell(ventana_padre):
     
     info_comandos = ttk.Label(
         info_frame,
-        text="📋 Comandos permitidos: ls, dir, pwd, echo",
+        text=" Comandos permitidos: ls, dir, pwd, echo",
         font=('Arial', 9),
         foreground='blue',
         background='#e7f3ff',
@@ -216,8 +216,8 @@ def abrir_shell(ventana_padre):
         if comando_base not in COMANDOS_VALIDOS:
             escribir_salida(f"\n$ {comando_str}\n")
             escribir_salida(
-                f"❌ ERROR: Comando '{comando_base}' no permitido en esta shell educativa.\n"
-                f"💡 Comandos disponibles: {', '.join(COMANDOS_VALIDOS)}\n\n"
+                f" ERROR: Comando '{comando_base}' no permitido en esta shell educativa.\n"
+                f" Comandos disponibles: {', '.join(COMANDOS_VALIDOS)}\n\n"
             )
             entry_cmd.delete(0, tk.END)
             return
@@ -249,20 +249,20 @@ def abrir_shell(ventana_padre):
             
             # Mostrar errores si existen
             if error:
-                escribir_salida(f"\n⚠️ ADVERTENCIA/ERROR:\n{error}\n")
+                escribir_salida(f"\n ADVERTENCIA/ERROR:\n{error}\n")
             
             # Si no hay salida ni error
             if not salida and not error:
-                escribir_salida("✅ Comando ejecutado correctamente (sin salida).\n")
+                escribir_salida(" Comando ejecutado correctamente (sin salida).\n")
             
             escribir_salida("-" * 60 + "\n")
             
         except subprocess.TimeoutExpired:
-            escribir_salida("❌ ERROR: El comando excedió el tiempo límite de ejecución.\n")
+            escribir_salida(" ERROR: El comando excedió el tiempo límite de ejecución.\n")
             escribir_salida("-" * 60 + "\n")
             
         except Exception as e:
-            escribir_salida(f"❌ ERROR al ejecutar el comando:\n{e}\n")
+            escribir_salida(f" ERROR al ejecutar el comando:\n{e}\n")
             escribir_salida("-" * 60 + "\n")
         
         # Limpiar el campo de entrada
@@ -333,7 +333,7 @@ def abrir_shell(ventana_padre):
     # Botón: Limpiar Pantalla
     btn_limpiar = ttk.Button(
         botones_frame,
-        text="🗑️ Limpiar Pantalla",
+        text=" Limpiar Pantalla",
         command=limpiar_salida
     )
     btn_limpiar.pack(side=tk.LEFT, padx=5)
@@ -360,7 +360,7 @@ NOTAS:
     
     btn_ayuda = ttk.Button(
         botones_frame,
-        text="❓ Ayuda",
+        text=" Ayuda",
         command=mostrar_ayuda
     )
     btn_ayuda.pack(side=tk.LEFT, padx=5)
@@ -368,7 +368,7 @@ NOTAS:
     # Botón: Retroceder (NUEVO)
     btn_retroceder = ttk.Button(
         botones_frame,
-        text="⬅️ Retroceder",
+        text=" Retroceder",
         command=cerrar_ventana
     )
     btn_retroceder.pack(side=tk.RIGHT, padx=5)

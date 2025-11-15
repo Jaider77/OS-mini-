@@ -136,9 +136,9 @@ def abrir_explorador(ventana_padre):
                 
                 # Distinguir entre carpetas y archivos
                 if os.path.isdir(ruta_completa):
-                    listbox.insert(tk.END, f"📁 [CARPETA] {item}")
+                    listbox.insert(tk.END, f" [CARPETA] {item}")
                 else:
-                    listbox.insert(tk.END, f"📄 {item}")
+                    listbox.insert(tk.END, f" {item}")
                     
         except PermissionError:
             # Error de permisos denegados
@@ -261,7 +261,7 @@ def abrir_explorador(ventana_padre):
     # Botón: Refrescar
     btn_refrescar = ttk.Button(
         btn_frame,
-        text="🔄 Refrescar",
+        text=" Refrescar",
         command=actualizar_lista
     )
     btn_refrescar.pack(side=tk.LEFT, padx=5)
@@ -269,7 +269,7 @@ def abrir_explorador(ventana_padre):
     # Botón: Subir Nivel
     btn_subir = ttk.Button(
         btn_frame,
-        text="⬆️ Subir Nivel (..)",
+        text="⬆ Subir Nivel (..)",
         command=subir_nivel
     )
     btn_subir.pack(side=tk.LEFT, padx=5)
@@ -277,7 +277,7 @@ def abrir_explorador(ventana_padre):
     # Botón: Retroceder (NUEVO)
     btn_retroceder = ttk.Button(
         btn_frame,
-        text="⬅️ Retroceder",
+        text="⬅ Retroceder",
         command=cerrar_ventana
     )
     btn_retroceder.pack(side=tk.RIGHT, padx=5)
