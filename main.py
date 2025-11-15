@@ -215,7 +215,7 @@ def crear_ventana_principal(color1="#44B3EB", color2="#000000", ancho=400, alto=
     
     # Pie de página dibujado en el canvas
     canvas.create_text(ancho/2, alto - 12, text="© 2025 - Mini Sistema Operativo v2.0",
-                       font=('Arial', 8), fill='#95a5a6')
+                       font=('Arial', 8), fill="#d1e7e9")
     
     # Mantener una referencia a las imágenes en el objeto root para
     # evitar que el recolector de basura elimine los PhotoImage y las
